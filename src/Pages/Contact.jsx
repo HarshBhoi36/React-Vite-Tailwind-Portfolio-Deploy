@@ -18,7 +18,7 @@ const ContactForm = () => {
   useEffect(() => {
     const fetchVisitorData = async () => {
         try {
-            const response = await axios.get("http://localhost:5000/last-visitor");
+            const response = await axios.get("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/last-visitor");
             if (response.data.city !== "Unknown") {
                 setVisitor(response.data);
             } else {
@@ -41,7 +41,7 @@ const ContactForm = () => {
     setStatus("Sending...");
 
     try {
-      await axios.post("http://localhost:5000/send", formData);
+      await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/send", formData);
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
