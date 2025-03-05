@@ -44,7 +44,7 @@ export default function About() {
         setPokeStatus("Poking...");
 
         try {
-            await axios.post("http://localhost:5000/poke"); // Change URL if deployed
+            await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/poke"); // Change URL if deployed
             setPokeStatus("Poke sent successfully!");
         } catch (error) {
             setPokeStatus("Failed to send poke.");
