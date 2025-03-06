@@ -17,8 +17,8 @@ const ContactForm = () => {
   // Fetch last visitor location
   useEffect(() => {
     const fetchVisitorData = async () => {
-        try {
-            const response = await axios.get("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/last-visitor");
+        try { 
+            const response = await axios.get("https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/last-visitor"); //https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/last-visitor
             if (response.data.city !== "Unknown") {
                 setVisitor(response.data);
             } else {
@@ -41,7 +41,7 @@ const ContactForm = () => {
     setStatus("Sending...");
 
     try {
-      await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/send", formData);
+      await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/send", formData);  // https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/send
       setStatus("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {

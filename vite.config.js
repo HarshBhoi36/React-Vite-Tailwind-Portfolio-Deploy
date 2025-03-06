@@ -11,19 +11,19 @@ export default defineConfig({
   server: {
     proxy: {
       "/send-email": {
-        target: "http://localhost:5000", // Ensure backend is handling emails
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
       "/poke": {
-        target: "http://localhost:5000",
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       },
       "/last-visitor": {
-        target: "http://localhost:5000",
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
         changeOrigin: true,
-        secure: false,
+        secure: true,
       }
     },
   },

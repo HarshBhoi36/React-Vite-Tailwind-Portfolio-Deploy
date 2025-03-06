@@ -44,8 +44,7 @@ export default function About() {
         setPokeStatus("Poking...");
 
         try {
-            await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/poke"); // Change URL if deployed
-            setPokeStatus("Poke sent successfully!");
+            await axios.post("https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/poke"); // Change URL if deployed https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/poke check this link if current doesnt work
         } catch (error) {
             setPokeStatus("Failed to send poke.");
         }
