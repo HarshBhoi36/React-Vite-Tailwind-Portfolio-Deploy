@@ -40,16 +40,19 @@ export default function About() {
     });
 
     // ✅ Function to send a poke notification
-    const handlePoke = async () => {
-        setPokeStatus("Poking...");
+    const BACKEND_URL = "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app";
 
-        try {
-            await axios.post("react-vite-tailwind-portfolio-deploy-hdgx.vercel.app/poke"); // Change URL if deployed https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/poke check this link if current doesnt work  https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/poke
-        } catch (error) {
-            setPokeStatus("Failed to send poke.");
-        }
-        
-    };
+const handlePoke = async () => {
+    setPokeStatus("Poking...");
+
+    try {
+        await axios.post(`${BACKEND_URL}/poke`);
+        setPokeStatus("Poke sent successfully!");
+    } catch (error) {
+        console.error("Poke Error:", error);
+        setPokeStatus("Failed to send poke.");
+    }
+};
     
     return (
         <div

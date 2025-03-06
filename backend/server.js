@@ -5,7 +5,13 @@ const cors = require("cors");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://www.harshbhoi.dev", "https://react-vite-tailwind-portfolio-deploy-nine.vercel.app"], // Allow frontend domains
+    methods: "GET,POST",
+    credentials: true, // Allows cookies, sessions, etc.
+  })
+);
 
 // Email sending route
 app.post("/send", async (req, res) => {
@@ -68,7 +74,13 @@ const fs = require("fs");
 
 /*const app = express(); causing error because of redeclaration */
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://www.harshbhoi.dev", "https://react-vite-tailwind-portfolio-deploy-nine.vercel.app"], // Allow frontend domains
+    methods: "GET,POST",
+    credentials: true, // Allows cookies, sessions, etc.
+  })
+);
 
 const LOCATION_FILE = "visitor.json";
 

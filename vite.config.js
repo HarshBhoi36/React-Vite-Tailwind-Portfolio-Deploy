@@ -11,17 +11,17 @@ export default defineConfig({
   server: {
     proxy: {
       "/send-email": {
-        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app",
         changeOrigin: true,
         secure: true,
       },
       "/poke": {
-        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app",
         changeOrigin: true,
         secure: true,
       },
       "/last-visitor": {
-        target: "https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app",
+        target: "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app",
         changeOrigin: true,
         secure: true,
       }

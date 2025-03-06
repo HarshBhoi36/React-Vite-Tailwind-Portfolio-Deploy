@@ -14,11 +14,13 @@ const ContactForm = () => {
   const [status, setStatus] = useState("");
   const [visitor, setVisitor] = useState(null);
 
-  // Fetch last visitor location
-  useEffect(() => {
+
+const BACKEND_URL = "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app";
+
+useEffect(() => {
     const fetchVisitorData = async () => {
-        try { 
-            const response = await axios.get("react-vite-tailwind-portfolio-deploy-hdgx.vercel.app/last-visitor"); //https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/last-visitor   https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/last-visitor
+        try {
+            const response = await axios.get(`${BACKEND_URL}/last-visitor`);
             if (response.data.city !== "Unknown") {
                 setVisitor(response.data);
             } else {
@@ -41,13 +43,14 @@ const ContactForm = () => {
     setStatus("Sending...");
 
     try {
-      await axios.post("react-vite-tailwind-portfolio-deploy-hdgx.vercel.app/send-email", formData);  // https://react-vite-tailwind-portfolio-deploy-hdgx-ctyz5857l.vercel.app/send    https://react-vite-tailwind-portfolio-deploy-hdgx-5rv4hezj6.vercel.app/send
-      setStatus("Message sent successfully!");
-      setFormData({ name: "", email: "", message: "" });
+        await axios.post(`${BACKEND_URL}/send`, formData);
+        setStatus("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
     } catch (error) {
-      setStatus("Failed to send message. Try again.");
+        console.error("Error sending message:", error);
+        setStatus("Failed to send message. Try again.");
     }
-  };
+};
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { triggerOnce: false, margin: "-100px" });
   return (
