@@ -39,8 +39,10 @@ export default function About() {
         threshold: 0.3,
     });
 
-    // ✅ Function to send a poke notification
-    const BACKEND_URL = "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app";
+    // ✅ Function to send a poke notification const BACKEND_URL = "https://react-vite-tailwind-portfolio-deploy-hdgx.vercel.app"; 2:30 7 march
+    
+    const BACKEND_URL = "https://react-vite-tailwind-portfolio-deploy-hdgx-7pgzz9nno.vercel.app";
+
 
 const handlePoke = async () => {
     setPokeStatus("Poking...");
