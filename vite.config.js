@@ -8,6 +8,8 @@ export default defineConfig({
     tailwindcss(),
     react()
   ], 
+   //build: { maxchunksize: 1500, }, 
+   
   server: {
     proxy: {
       "/send-email": {
